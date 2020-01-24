@@ -1,0 +1,99 @@
+.header {
+   &__menu {
+      box-shadow: 0 0 10px #111;
+      position: fixed;
+      z-index: 20;
+      background-color: $main-color;
+      width: 100%;
+      top: 0;
+      left: 0;
+      ul {
+         @include flex-container;
+         list-style-type: none;
+         padding: 1rem;
+         margin: 0;
+         li {
+            margin: 0.5rem;
+            a {
+               color: #fff;
+               text-decoration: none;
+               padding: 0.5rem;
+               border-radius: 0.5rem;
+            }
+            a:hover {
+               box-shadow: 0px 0px 5px $shine-color;
+               color: $shine-color;
+               text-shadow: 0 0 4px $shine-color;
+            }
+         }
+      }
+   }
+}
+
+.front {
+   position: fixed;
+   width: 100%;
+   height: 100vh;
+   background-color: #fff;
+   z-index: 1;
+   display: flex;
+   justify-content: center;
+   &__title--inline {
+      display: inline-block;
+      opacity: 0;
+      font-size: 2rem;
+      animation: titleFront 3s;
+      animation-fill-mode: forwards;
+      @include media-query(medium) {
+         font-size: 2.5rem;
+      }
+      @include media-query(xlarge) {
+         font-size: 3rem;
+      }
+   }
+
+   &__title1 {
+      position: absolute;
+      top: 49vh;
+      transform: rotate(45deg);
+   }
+   &__title2 {
+      transform: rotate(45deg);
+   }
+   &__title3 {
+      transform: rotate(45deg);
+   }
+   &__title4 {
+      transform: rotate(45deg);
+   }
+   &__title5 {
+      transform: rotate(45deg);
+   }
+   &__title6 {
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      text-align: center;
+      opacity: 0;
+      animation: titleDev 1s 3s;
+      animation-fill-mode: forwards;
+      @include media-query(medium) {
+         font-size: 1.9rem;
+      }
+      @include media-query(xlarge) {
+         font-size: 2.4rem;
+      }
+   }
+
+   @keyframes titleFront {
+      100% {
+         transform: rotate(1080deg);
+         opacity: 100%;
+      }
+   }
+
+   @keyframes titleDev {
+      100% {
+         opacity: 100%;
+      }
+   }
+}

@@ -1,0 +1,68 @@
+$main-color: #222529;
+$shine-color: #d7f3ff;
+
+$breakpoints: (
+   xxsmall: (
+      min-width: 375px
+   ),
+   xsmall: (
+      min-width: 460px
+   ),
+   small: (
+      min-width: 640px
+   ),
+   smaller: (
+      min-width: 700px
+   ),
+   medium: (
+      min-width: 800px
+   ),
+   xmedium: (
+      min-width: 850px
+   ),
+   large: (
+      min-width: 1024px
+   ),
+   xlarge: (
+      min-width: 1300px
+   ),
+   xxlarge: (
+      min-width: 1440px
+   ),
+   hd: (
+      min-width: 1920px
+   )
+);
+
+@mixin media-query($breakpoint) {
+   $size: map-get($breakpoints, $breakpoint);
+   @if ($size) {
+      @media #{$size} {
+         @content;
+      }
+   } @else {
+      @error '"#{$breakpoint}" - wrong value!';
+   }
+}
+
+@mixin containers($width: 100%, $overflow: hidden, $height: 30vw) {
+   width: $width;
+   overflow: $overflow;
+   height: $height;
+   @content;
+}
+
+@mixin flex-container(
+   $display: flex,
+   $justify-content: center,
+   $align-items: center,
+   $flex-direction: row,
+   $flex-wrap: wrap
+) {
+   display: $display;
+   justify-content: $justify-content;
+   align-items: $align-items;
+   flex-direction: $flex-direction;
+   flex-wrap: $flex-wrap;
+   @content;
+}
