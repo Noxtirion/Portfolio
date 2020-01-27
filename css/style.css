@@ -209,20 +209,13 @@ p {
 }
 
 .main__about-me {
-  width: 80%;
+  width: 100%;
   background-color: #222529;
   grid-auto-flow: column;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
-}
-
-@media (min-width: 1024px) {
-  .main__about-me {
-    -ms-grid-columns: 8rem 1fr 1fr 1fr 8rem;
-        grid-template-columns: 8rem 1fr 1fr 1fr 8rem;
-  }
+  -ms-grid-columns: 1fr (minmax(auto, 300px))[3] 1fr;
+      grid-template-columns: 1fr repeat(3, minmax(auto, 300px)) 1fr;
+  -ms-grid-rows: auto auto 6rem;
+      grid-template-rows: auto auto 6rem;
 }
 
 .main__about-me h2 {
@@ -236,9 +229,9 @@ p {
 .main__about-me p {
   -ms-grid-row: 2;
   grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 5;
-  grid-column: 1 / span 5;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2 / span 3;
   margin: 0 0.5rem;
 }
 
@@ -251,7 +244,7 @@ p {
 }
 
 .main__technologies {
-  width: 80%;
+  width: 100%;
   background-color: #222529;
   grid-auto-flow: row;
   -ms-grid-rows: 1fr;
@@ -273,18 +266,55 @@ p {
 
 @media (min-width: 800px) {
   .main__technologies {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr (minmax(auto, 300px))[3] 1fr;
+        grid-template-columns: 1fr repeat(3, minmax(auto, 300px)) 1fr;
+    -ms-grid-rows: (auto)[4];
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "left empty1 title empty2 right" "left html css js right" "left react sass webpack right" "left empty3 git empty4 right";
   }
-  .main__technologies h2,
+  .main__technologies h2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: title;
+  }
+  .main__technologies .main__html {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: html;
+  }
+  .main__technologies .main__css {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: css;
+  }
+  .main__technologies .main__js {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    grid-area: js;
+  }
+  .main__technologies .main__react {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: react;
+  }
+  .main__technologies .main__sass {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: sass;
+  }
+  .main__technologies .main__webpack {
+    -ms-grid-row: 3;
+    -ms-grid-column: 4;
+    grid-area: webpack;
+  }
   .main__technologies .main__git {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
-    grid-column: 1 / span 3;
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+    grid-area: git;
   }
 }
 
-.main__technologies section {
+.main__technologies .main__open {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -298,23 +328,21 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: solid rgba(17, 17, 17, 0.5);
-  border-width: 1px 0;
 }
 
-.main__technologies section img {
+.main__technologies .main__open img {
   width: 6rem;
   height: 6rem;
   background-color: dodgerblue;
   margin: 0.5rem;
 }
 
-.main__technologies section .main__techText {
+.main__technologies .main__open .main__techText {
   margin: 0 0.5rem;
 }
 
 .main__projects {
-  width: 80%;
+  width: 100%;
   background-color: #222529;
   grid-auto-flow: row;
   -ms-grid-rows: 1fr;
@@ -340,14 +368,51 @@ p {
 
 @media (min-width: 850px) {
   .main__projects {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr (minmax(auto, 300px))[3] 1fr;
+        grid-template-columns: 1fr repeat(3, minmax(auto, 300px)) 1fr;
+    -ms-grid-rows: (auto)[4];
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "left empty1 title empty2 right" "left game calc noma right" "left accounting nasa minecraft right" "left empty3 portfolio empty4 right";
   }
-  .main__projects h2,
+  .main__projects h2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: title;
+  }
+  .main__projects .main__game {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: game;
+  }
+  .main__projects .main__calc {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: calc;
+  }
+  .main__projects .main__noma {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    grid-area: noma;
+  }
+  .main__projects .main__accounting {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: accounting;
+  }
+  .main__projects .main__nasa {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: nasa;
+  }
+  .main__projects .main__minecraft {
+    -ms-grid-row: 3;
+    -ms-grid-column: 4;
+    grid-area: minecraft;
+  }
   .main__projects .main__portfolio {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
-    grid-column: 1 / span 3;
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+    grid-area: portfolio;
   }
 }
 

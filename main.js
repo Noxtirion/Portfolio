@@ -18,14 +18,10 @@ function changeContent() {
 
    menuList.forEach(element => {
       element.addEventListener("click", function(e) {
-         // console.log(e.target);
-         // console.log(aboutMeButton);
-
          const index = contentButtons.findIndex(item => {
             return e.target === item;
          });
-         // console.log(e.target === start);
-         // front.setAttribute("style", "display: none");
+
          e.target !== start
             ? content[index].setAttribute("style", "display: grid")
             : content[index].setAttribute("style", "display: flex");
@@ -35,9 +31,6 @@ function changeContent() {
          prevContent.forEach(item => {
             item.setAttribute("style", "display: none");
          });
-         // console.log(e.target === aboutMeButton);
-
-         // console.log(front.innerHTML);
       });
    });
 }
