@@ -8,7 +8,6 @@
 body {
   margin: 0px;
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: #222529;
 }
 
 p {
@@ -182,15 +181,26 @@ p {
 
 .main {
   position: relative;
-  top: 100vh;
-  z-index: 10;
-  background-color: #222529;
+  top: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 0;
   color: #fff;
 }
 
 .main__about-me, .main__technologies, .main__projects {
-  display: -ms-grid;
-  display: grid;
+  display: none;
 }
 
 .main__about-me h2, .main__technologies h2, .main__projects h2 {
@@ -199,6 +209,8 @@ p {
 }
 
 .main__about-me {
+  width: 80%;
+  background-color: #222529;
   grid-auto-flow: column;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -239,6 +251,8 @@ p {
 }
 
 .main__technologies {
+  width: 80%;
+  background-color: #222529;
   grid-auto-flow: row;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
@@ -300,6 +314,8 @@ p {
 }
 
 .main__projects {
+  width: 80%;
+  background-color: #222529;
   grid-auto-flow: row;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
@@ -322,7 +338,7 @@ p {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 850px) {
   .main__projects {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
@@ -439,6 +455,7 @@ p {
   z-index: 30;
   display: -ms-grid;
   display: grid;
+  display: none;
 }
 
 .footer h2 {
