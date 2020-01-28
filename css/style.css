@@ -16,11 +16,8 @@ p {
 }
 
 .header__menu {
-  -webkit-box-shadow: 0 0 10px #111;
-          box-shadow: 0 0 10px #111;
   position: fixed;
   z-index: 20;
-  background-color: #222529;
   width: 100%;
   top: 0;
   left: 0;
@@ -44,7 +41,11 @@ p {
       flex-wrap: wrap;
   list-style-type: none;
   padding: 1rem;
-  margin: 0;
+  margin: 0 auto 1rem;
+  max-width: 100%;
+  max-width: 1024px;
+  border-bottom: 3px solid #b59bb1;
+  border-radius: 0 0 40% 40%;
 }
 
 .header__menu ul li {
@@ -52,7 +53,7 @@ p {
 }
 
 .header__menu ul li a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -74,6 +75,7 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 1;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -181,7 +183,6 @@ p {
 
 .main {
   position: relative;
-  top: 20vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,24 +197,35 @@ p {
       -ms-flex-direction: column;
           flex-direction: column;
   z-index: 0;
+  overflow: hidden;
   color: #fff;
+  background-color: #264d5b;
 }
 
 .main__about-me, .main__technologies, .main__projects {
-  display: none;
+  display: -ms-grid;
+  display: grid;
+  opacity: 0;
+  height: 0;
+  -webkit-transform: translateY(6rem);
+          transform: translateY(6rem);
+  -webkit-transition: opacity 1s, height 1s, -webkit-transform 1s;
+  transition: opacity 1s, height 1s, -webkit-transform 1s;
+  transition: opacity 1s, height 1s, transform 1s;
+  transition: opacity 1s, height 1s, transform 1s, -webkit-transform 1s;
 }
 
 .main__about-me h2, .main__technologies h2, .main__projects h2 {
+  font-size: 2rem;
   text-align: center;
-  margin: 4rem 0;
+  margin: 10rem 0 5rem;
 }
 
 .main__about-me {
   width: 100%;
-  background-color: #222529;
   grid-auto-flow: column;
-  -ms-grid-columns: 1fr (minmax(auto, 300px))[3] 1fr;
-      grid-template-columns: 1fr repeat(3, minmax(auto, 300px)) 1fr;
+  -ms-grid-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
+      grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
   -ms-grid-rows: auto auto 6rem;
       grid-template-rows: auto auto 6rem;
 }
@@ -245,7 +257,6 @@ p {
 
 .main__technologies {
   width: 100%;
-  background-color: #222529;
   grid-auto-flow: row;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
@@ -266,10 +277,10 @@ p {
 
 @media (min-width: 800px) {
   .main__technologies {
-    -ms-grid-columns: 1fr (minmax(auto, 300px))[3] 1fr;
-        grid-template-columns: 1fr repeat(3, minmax(auto, 300px)) 1fr;
-    -ms-grid-rows: (auto)[4];
-        grid-template-rows: repeat(4, auto);
+    -ms-grid-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
+        grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
+    -ms-grid-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
         grid-template-areas: "left empty1 title empty2 right" "left html css js right" "left react sass webpack right" "left empty3 git empty4 right";
   }
   .main__technologies h2 {
@@ -343,14 +354,9 @@ p {
 
 .main__projects {
   width: 100%;
-  background-color: #222529;
   grid-auto-flow: row;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-}
-
-.main__projects h2 {
-  margin-bottom: 3rem;
 }
 
 @media (min-width: 640px) {
@@ -368,11 +374,11 @@ p {
 
 @media (min-width: 850px) {
   .main__projects {
-    -ms-grid-columns: 1fr (minmax(auto, 300px))[3] 1fr;
-        grid-template-columns: 1fr repeat(3, minmax(auto, 300px)) 1fr;
-    -ms-grid-rows: (auto)[4];
-        grid-template-rows: repeat(4, auto);
-        grid-template-areas: "left empty1 title empty2 right" "left game calc noma right" "left accounting nasa minecraft right" "left empty3 portfolio empty4 right";
+    -ms-grid-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
+        grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
+    -ms-grid-rows: auto auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: "left empty1 title empty2 right" "left game empty3 calc right" "left noma empty4 accounting right" "left nasa empty5 minecraft right" "left empty6 portfolio empty7 right";
   }
   .main__projects h2 {
     -ms-grid-row: 1;
@@ -386,31 +392,31 @@ p {
   }
   .main__projects .main__calc {
     -ms-grid-row: 2;
-    -ms-grid-column: 3;
+    -ms-grid-column: 4;
     grid-area: calc;
   }
   .main__projects .main__noma {
-    -ms-grid-row: 2;
-    -ms-grid-column: 4;
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
     grid-area: noma;
   }
   .main__projects .main__accounting {
     -ms-grid-row: 3;
-    -ms-grid-column: 2;
+    -ms-grid-column: 4;
     grid-area: accounting;
   }
   .main__projects .main__nasa {
-    -ms-grid-row: 3;
-    -ms-grid-column: 3;
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
     grid-area: nasa;
   }
   .main__projects .main__minecraft {
-    -ms-grid-row: 3;
+    -ms-grid-row: 4;
     -ms-grid-column: 4;
     grid-area: minecraft;
   }
   .main__projects .main__portfolio {
-    -ms-grid-row: 4;
+    -ms-grid-row: 5;
     -ms-grid-column: 3;
     grid-area: portfolio;
   }
@@ -436,7 +442,7 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 15rem;
+  width: 25rem;
   margin: 1rem;
   position: relative;
   overflow: hidden;
@@ -445,7 +451,7 @@ p {
 .main__projects section .main__wrapper img {
   position: relative;
   width: 100%;
-  height: 15rem;
+  height: 20rem;
   background-color: #fff;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -454,13 +460,14 @@ p {
   transition: bottom 0.3s ease-in-out;
 }
 
-.main__projects section .main__wrapper figcaption {
+.main__projects section .main__wrapper span {
   text-align: center;
-  background-color: #222529;
+  background-color: #264d5b;
   z-index: 30;
+  border: 1px solid #8fd67e;
 }
 
-.main__projects section .main__wrapper figcaption h3 {
+.main__projects section .main__wrapper span h3 {
   color: #fff;
   margin: 0.8rem;
 }
@@ -512,6 +519,14 @@ p {
     position: relative;
     bottom: 0.5rem;
   }
+}
+
+.visible {
+  opacity: 1;
+  height: auto;
+  min-height: 100vh;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .footer {

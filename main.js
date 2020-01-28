@@ -5,8 +5,13 @@ function changeContent() {
    const technologies = document.querySelector(".main__technologies");
    const projects = document.querySelector(".main__projects");
 
-   // menu buttons
+   // menu list
+
+   const menuListUl = document.querySelector(".header__list");
    const menuList = document.querySelectorAll(".header__menu-list");
+
+   // menu buttons
+
    const start = document.querySelector(".header__start");
    const aboutMeButton = document.querySelector(".header__about-me");
    const technologiesButton = document.querySelector(".header__technologies");
@@ -23,13 +28,19 @@ function changeContent() {
          });
 
          e.target !== start
-            ? content[index].setAttribute("style", "display: grid")
+            ? content[index].classList.add("visible")
             : content[index].setAttribute("style", "display: flex");
          prevContent = content.filter(item => {
             return item !== content[index];
          });
+         e.target !== start
+            ? menuListUl.setAttribute("style", "background-color: #264d5b")
+            : menuListUl.setAttribute("style", "background-color: #fff");
+
          prevContent.forEach(item => {
-            item.setAttribute("style", "display: none");
+            item === front
+               ? item.setAttribute("style", "display: none")
+               : item.classList.remove("visible");
          });
       });
    });

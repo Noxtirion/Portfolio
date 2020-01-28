@@ -1,31 +1,37 @@
 .main {
    position: relative;
-   // display: none;
-   top: 20vh;
+
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
    z-index: 0;
-   // background-color: $main-color;
+   overflow: hidden;
    color: #fff;
+   background-color: $secondary-color;
 
    &__about-me,
    &__technologies,
    &__projects {
-      // display: grid;
-      display: none;
+      display: grid;
+      opacity: 0;
+
+      // min-height: 100vh;
+      height: 0;
+      transform: translateY(6rem);
+      transition: opacity 1s, height 1s, transform 1s;
       h2 {
+         font-size: 2rem;
          text-align: center;
-         margin: 4rem 0;
+         margin: 10rem 0 5rem;
       }
    }
 
    &__about-me {
       width: 100%;
-      background-color: $main-color;
+      // background-color: $secondary-color;
       grid-auto-flow: column;
-      grid-template-columns: 1fr repeat(3, minmax(auto, 300px)) 1fr;
+      grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
       grid-template-rows: auto auto 6rem;
       // @include media-query(large) {
       //    grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
@@ -47,7 +53,7 @@
 
    &__technologies {
       width: 100%;
-      background-color: $main-color;
+      // background-color: $secondary-color;
       grid-auto-flow: row;
       grid-template-rows: 1fr;
       // grid-auto-rows: 6rem;
@@ -59,8 +65,8 @@
          }
       }
       @include media-query(medium) {
-         grid-template-columns: 1fr repeat(3, minmax(auto, 300px)) 1fr;
-         grid-template-rows: repeat(4, auto);
+         grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
+         grid-template-rows: auto auto auto auto;
          grid-template-areas:
             "left empty1 title empty2 right"
             "left html css js right"
@@ -119,12 +125,9 @@
 
    &__projects {
       width: 100%;
-      background-color: $main-color;
+      // background-color: $secondary-color;
       grid-auto-flow: row;
       grid-template-rows: 1fr;
-      h2 {
-         margin-bottom: 3rem;
-      }
 
       @include media-query(small) {
          grid-template-columns: 1fr 1fr;
@@ -135,13 +138,14 @@
       }
 
       @include media-query(xmedium) {
-         grid-template-columns: 1fr repeat(3, minmax(auto, 300px)) 1fr;
-         grid-template-rows: repeat(4, auto);
+         grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
+         grid-template-rows: auto auto auto auto auto;
          grid-template-areas:
             "left empty1 title empty2 right"
-            "left game calc noma right"
-            "left accounting nasa minecraft right"
-            "left empty3 portfolio empty4 right";
+            "left game empty3 calc right"
+            "left noma empty4 accounting right"
+            "left nasa empty5 minecraft right"
+            "left empty6 portfolio empty7 right";
          h2 {
             grid-area: title;
          }
@@ -176,7 +180,7 @@
          .main__wrapper {
             display: flex;
             flex-direction: column;
-            width: 15rem;
+            width: 25rem;
             margin: 1rem;
             position: relative;
             overflow: hidden;
@@ -184,17 +188,18 @@
             img {
                position: relative;
                width: 100%;
-               height: 15rem;
+               height: 20rem;
                background-color: #fff;
                transform: scale(1.1);
                bottom: 0rem;
                transition: bottom 0.3s ease-in-out;
             }
 
-            figcaption {
+            span {
                text-align: center;
-               background-color: $main-color;
+               background-color: $secondary-color;
                z-index: 30;
+               border: 1px solid #8fd67e;
 
                h3 {
                   color: #fff;
@@ -244,4 +249,11 @@
          }
       }
    }
+}
+
+.visible {
+   opacity: 1;
+   height: auto;
+   min-height: 100vh;
+   transform: translateY(0);
 }
