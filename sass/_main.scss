@@ -16,7 +16,6 @@
       display: grid;
       opacity: 0;
 
-      // min-height: 100vh;
       height: 0;
       transform: translateY(6rem);
       transition: opacity 1s, height 1s, transform 1s;
@@ -29,13 +28,10 @@
 
    &__about-me {
       width: 100%;
-      // background-color: $secondary-color;
+
       grid-auto-flow: column;
       grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
-      grid-template-rows: auto auto 6rem;
-      // @include media-query(large) {
-      //    grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
-      // }
+      grid-template-rows: 300px auto 6rem;
 
       h2 {
          grid-row: 1;
@@ -52,58 +48,35 @@
    }
 
    &__technologies {
-      width: 100%;
-      // background-color: $secondary-color;
+      max-width: 1000px;
+
       grid-auto-flow: row;
       grid-template-rows: 1fr;
-      // grid-auto-rows: 6rem;
+
       @include media-query(xxsmall) {
          grid-template-columns: 1fr 1fr;
+         grid-template-rows: 300px 200px 200px;
          h2,
          .main__git {
             grid-column: 1 / span 2;
          }
       }
       @include media-query(medium) {
-         grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
-         grid-template-rows: auto auto auto auto;
-         grid-template-areas:
-            "left empty1 title empty2 right"
-            "left html css js right"
-            "left react sass webpack right"
-            "left empty3 git empty4 right";
+         grid-template-columns: 1fr 1fr 1fr 1fr;
          h2 {
-            grid-area: title;
-         }
-         .main__html {
-            grid-area: html;
-         }
-         .main__css {
-            grid-area: css;
-         }
-         .main__js {
-            grid-area: js;
-         }
-         .main__react {
-            grid-area: react;
-         }
-         .main__sass {
-            grid-area: sass;
-         }
-         .main__webpack {
-            grid-area: webpack;
+            grid-column: 1 / span 4;
          }
          .main__git {
-            grid-area: git;
+            grid-column: auto;
          }
       }
+
       .main__open {
          display: flex;
          flex-direction: column;
          justify-content: flex-start;
          align-items: center;
-         // border: solid rgba(17, 17, 17, 0.5);
-         // border-width: 1px 0;
+
          img {
             width: 6rem;
             height: 6rem;
@@ -124,7 +97,7 @@
    }
 
    &__projects {
-      width: 100%;
+      max-width: 1000px;
       // background-color: $secondary-color;
       grid-auto-flow: row;
       grid-template-rows: 1fr;
@@ -138,37 +111,10 @@
       }
 
       @include media-query(xmedium) {
-         grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
-         grid-template-rows: auto auto auto auto auto;
-         grid-template-areas:
-            "left empty1 title empty2 right"
-            "left game empty3 calc right"
-            "left noma empty4 accounting right"
-            "left nasa empty5 minecraft right"
-            "left empty6 portfolio empty7 right";
-         h2 {
-            grid-area: title;
-         }
-         .main__game {
-            grid-area: game;
-         }
-         .main__calc {
-            grid-area: calc;
-         }
-         .main__noma {
-            grid-area: noma;
-         }
-         .main__accounting {
-            grid-area: accounting;
-         }
-         .main__nasa {
-            grid-area: nasa;
-         }
-         .main__minecraft {
-            grid-area: minecraft;
-         }
+         grid-template-columns: 1fr 1fr;
+         h2,
          .main__portfolio {
-            grid-area: portfolio;
+            grid-column: 1 / span 2;
          }
       }
 
@@ -180,10 +126,13 @@
          .main__wrapper {
             display: flex;
             flex-direction: column;
-            width: 25rem;
+            width: 15rem;
             margin: 1rem;
             position: relative;
             overflow: hidden;
+            @include media-query(medium) {
+               width: 20rem;
+            }
 
             img {
                position: relative;
@@ -199,7 +148,7 @@
                text-align: center;
                background-color: $secondary-color;
                z-index: 30;
-               border: 1px solid #8fd67e;
+               border: 1px solid #b59bb1;
 
                h3 {
                   color: #fff;
