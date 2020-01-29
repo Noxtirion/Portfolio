@@ -60,10 +60,10 @@ p {
 }
 
 .header__menu ul li a:hover {
-  -webkit-box-shadow: 0px 0px 5px #d7f3ff;
-          box-shadow: 0px 0px 5px #d7f3ff;
-  color: #d7f3ff;
-  text-shadow: 0 0 4px #d7f3ff;
+  -webkit-box-shadow: 0px 0px 5px #b59bb1;
+          box-shadow: 0px 0px 5px #b59bb1;
+  color: #b59bb1;
+  text-shadow: 0 0 4px #b59bb1;
 }
 
 .front {
@@ -183,6 +183,7 @@ p {
 
 .main {
   position: relative;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,13 +197,15 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 0;
   overflow: hidden;
   color: #fff;
   background-color: #264d5b;
 }
 
 .main__about-me, .main__technologies, .main__projects {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: -ms-grid;
   display: grid;
   opacity: 0;
@@ -423,7 +426,7 @@ p {
   height: 5rem;
   bottom: 0;
   left: 0;
-  background-color: #4e5256de;
+  background-color: #b59bb1c9;
 }
 
 @media (min-width: 1024px) {
@@ -442,8 +445,8 @@ p {
 }
 
 .main__projects section .main__wrapper .main__links a:hover {
-  color: #d7f3ff;
-  text-shadow: 0px 0px 4px #d7f3ff;
+  color: #264d5b;
+  text-shadow: 0px 0px 4px #264d5b;
 }
 
 .main__projects section .main__wrapper:hover .main__links {

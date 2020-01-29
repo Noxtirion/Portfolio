@@ -1,9 +1,7 @@
 .header {
    &__menu {
-      // box-shadow: 0 0 10px #111;
       position: fixed;
       z-index: 20;
-      // background-color: $main-color;
       width: 100%;
       top: 0;
       left: 0;
@@ -14,9 +12,7 @@
          margin: 0 auto 1rem;
          max-width: 100%;
          max-width: 1024px;
-         border-bottom: 3px solid #b59bb1;
-         // border-left: 3px solid #b59bb1;
-         // background-color: $secondary-color;
+         border-bottom: 3px solid $shine-color;
          border-radius: 0 0 40% 40%;
          li {
             margin: 0.5rem;
