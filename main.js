@@ -28,13 +28,10 @@ function changeContent() {
             return e.target === item;
          });
 
-         if (e.target !== start) {
-            content[index].classList.add("visible");
-            mainSection.setAttribute(`style`, `height: ${content[index].offsetHeight}px`);
-            console.log(content[index].offsetHeight);
-         } else {
-            content[index].setAttribute("style", "display: flex");
-         }
+         e.target !== start
+            ? content[index].classList.add("visible")
+            : content[index].setAttribute("style", "display: flex");
+
          prevContent = content.filter(item => {
             return item !== content[index];
          });
