@@ -41,6 +41,7 @@
    display: flex;
    opacity: 1;
    justify-content: center;
+   align-items: center;
    &__title--inline {
       display: inline-block;
       opacity: 0;
@@ -56,8 +57,6 @@
    }
 
    &__title1 {
-      position: absolute;
-      top: 49vh;
       transform: rotate(45deg);
    }
    &__title2 {
@@ -99,4 +98,10 @@
          opacity: 100%;
       }
    }
+}
+
+.active {
+   box-shadow: 0px 0px 5px $shine-color;
+   color: $shine-color;
+   text-shadow: 0 0 4px $shine-color;
 }
