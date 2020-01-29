@@ -10,6 +10,7 @@ function changeContent() {
 
    const menuListUl = document.querySelector(".header__list");
    const menuList = document.querySelectorAll(".header__menu-list");
+   const menuLink = document.querySelectorAll(".header__color");
 
    // menu buttons
 
@@ -21,6 +22,7 @@ function changeContent() {
    const content = [front, aboutMe, technologies, projects];
    const contentButtons = [start, aboutMeButton, technologiesButton, projectsButton];
    let prevContent;
+   let prevContentButtons;
 
    menuList.forEach(element => {
       element.addEventListener("click", function(e) {
@@ -28,13 +30,26 @@ function changeContent() {
             return e.target === item;
          });
 
+         const prevCheck = x => {
+            return x.filter(item => {
+               return item !== x[index];
+            });
+         };
+
+         contentButtons[index].classList.add("active");
+
+         prevContentButtons = prevCheck(contentButtons);
+
+         prevContentButtons.forEach(item => {
+            item.classList.remove("active");
+         });
+
          e.target !== start
             ? content[index].classList.add("visible")
             : content[index].setAttribute("style", "display: flex");
 
-         prevContent = content.filter(item => {
-            return item !== content[index];
-         });
+         prevContent = prevCheck(content);
+
          e.target !== start
             ? menuListUl.setAttribute("style", "background-color: #264d5b")
             : menuListUl.setAttribute("style", "background-color: #fff");
@@ -46,6 +61,10 @@ function changeContent() {
          });
       });
    });
+
+   // menuLink.forEach(element => {
+
+   // })
 }
 
 changeContent();
