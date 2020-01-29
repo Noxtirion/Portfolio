@@ -1,6 +1,7 @@
 function changeContent() {
    // sections
    const front = document.querySelector(".front");
+   const mainSection = document.querySelector(".main");
    const aboutMe = document.querySelector(".main__about-me");
    const technologies = document.querySelector(".main__technologies");
    const projects = document.querySelector(".main__projects");
@@ -27,9 +28,13 @@ function changeContent() {
             return e.target === item;
          });
 
-         e.target !== start
-            ? content[index].classList.add("visible")
-            : content[index].setAttribute("style", "display: flex");
+         if (e.target !== start) {
+            content[index].classList.add("visible");
+            mainSection.setAttribute(`style`, `height: ${content[index].offsetHeight}px`);
+            console.log(content[index].offsetHeight);
+         } else {
+            content[index].setAttribute("style", "display: flex");
+         }
          prevContent = content.filter(item => {
             return item !== content[index];
          });
