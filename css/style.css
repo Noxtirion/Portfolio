@@ -183,6 +183,8 @@ p {
 
 .main {
   position: relative;
+  top: 0;
+  width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -203,19 +205,13 @@ p {
 }
 
 .main__about-me, .main__technologies, .main__projects {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   display: -ms-grid;
   display: grid;
   opacity: 0;
   height: 0;
   -webkit-transform: translateY(6rem);
           transform: translateY(6rem);
-  -webkit-transition: opacity 1s, height 1s, -webkit-transform 1s;
-  transition: opacity 1s, height 1s, -webkit-transform 1s;
-  transition: opacity 1s, height 1s, transform 1s;
-  transition: opacity 1s, height 1s, transform 1s, -webkit-transform 1s;
 }
 
 .main__about-me h2, .main__technologies h2, .main__projects h2 {
@@ -461,11 +457,36 @@ p {
 }
 
 .visible {
-  opacity: 1;
   height: auto;
   min-height: 100vh;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-animation-name: show;
+          animation-name: show;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 .footer {
