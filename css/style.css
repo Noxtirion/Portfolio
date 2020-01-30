@@ -31,13 +31,17 @@ p {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  opacity: 0;
+  -webkit-animation: fadeIn 1.5s linear forwards;
+          animation: fadeIn 1.5s linear forwards;
   width: 100%;
   height: 4rem;
   position: fixed;
   top: 0;
   left: 0;
-  border-bottom: 3px solid #b59bb1;
+  border-bottom: 2px solid #b59bb1;
   z-index: 2;
+  background-color: #fff;
 }
 
 @media (min-width: 700px) {
@@ -183,12 +187,16 @@ p {
   top: 4rem;
   left: 0;
   width: 100%;
+  background-color: #fff;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition: -webkit-transform 0.5s ease-out;
   transition: -webkit-transform 0.5s ease-out;
   transition: transform 0.5s ease-out;
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  opacity: 0;
+  -webkit-animation: fadeIn 1.5s linear forwards;
+          animation: fadeIn 1.5s linear forwards;
 }
 
 .header__menu ul {
@@ -210,8 +218,8 @@ p {
   list-style-type: none;
   padding: 0.5rem;
   margin: 0 auto;
-  border-right: 3px solid #b59bb1;
-  border-bottom: 3px solid #b59bb1;
+  border-right: 2px solid #b59bb1;
+  border-bottom: 2px solid #b59bb1;
 }
 
 .header__menu ul li {
@@ -269,11 +277,7 @@ p {
         flex-wrap: wrap;
     list-style-type: none;
     padding: 1rem;
-    margin: 0 auto 1rem;
-    max-width: 1024px;
-    border-bottom: 3px solid #b59bb1;
-    border-right: 0;
-    border-radius: 0 0 40% 40%;
+    border: 0;
   }
   .header__menu ul li {
     width: auto;
@@ -284,19 +288,18 @@ p {
     color: #000;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    border-top: 0px solid #b59bb1;
-    -webkit-transition: border-top 0.2s;
-    transition: border-top 0.2s;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
   }
   .header__menu ul li a:hover {
     border-right: 0;
-    border-top: 3px solid #b59bb1;
+    border-bottom: 3px solid #b59bb1;
     color: #b59bb1;
     text-shadow: 0 0 1px #b59bb1;
   }
   .header__menu ul li .active {
     border-right: 0;
-    border-top: 3px solid #b59bb1;
+    border-bottom: 3px solid #b59bb1;
     color: #b59bb1;
     text-shadow: 0 0 1px #b59bb1;
   }
@@ -415,6 +418,18 @@ p {
 @keyframes titleDev {
   100% {
     opacity: 100%;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
   }
 }
 

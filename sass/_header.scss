@@ -1,13 +1,16 @@
 .header {
    &__wrapper {
       @include flex-container;
+      opacity: 0;
+      animation: fadeIn 1.5s linear forwards;
       width: 100%;
       height: 4rem;
       position: fixed;
       top: 0;
       left: 0;
-      border-bottom: 3px solid $shine-color;
+      border-bottom: 2px solid $shine-color;
       z-index: 2;
+      background-color: #fff;
       @include media-query(smaller) {
          height: 3rem;
       }
@@ -101,17 +104,19 @@
       top: 4rem;
       left: 0;
       width: 100%;
-      // background-color: #fff;
+      background-color: #fff;
       transform: translateX(-100%);
       transition: transform 0.5s ease-out;
+      opacity: 0;
+      animation: fadeIn 1.5s linear forwards;
 
       ul {
          @include flex-container($flex-direction: column, $align-items: flex-end);
          list-style-type: none;
          padding: 0.5rem;
          margin: 0 auto;
-         border-right: 3px solid $shine-color;
-         border-bottom: 3px solid $shine-color;
+         border-right: 2px solid $shine-color;
+         border-bottom: 2px solid $shine-color;
 
          li {
             width: 9rem;
@@ -152,11 +157,8 @@
             @include flex-container;
             list-style-type: none;
             padding: 1rem;
-            margin: 0 auto 1rem;
-            max-width: 1024px;
-            border-bottom: 3px solid $shine-color;
-            border-right: 0;
-            border-radius: 0 0 40% 40%;
+            border: 0;
+
             li {
                width: auto;
                margin: 0.5rem;
@@ -165,18 +167,17 @@
                   color: #000;
                   padding: 0.5rem;
                   border-radius: 0.5rem;
-                  border-top: 0px solid $shine-color;
-                  transition: border-top 0.2s;
+                  transition: border-bottom 0.2s;
                }
                a:hover {
                   border-right: 0;
-                  border-top: 3px solid $shine-color;
+                  border-bottom: 3px solid $shine-color;
                   color: $shine-color;
                   text-shadow: 0 0 1px $shine-color;
                }
                .active {
                   border-right: 0;
-                  border-top: 3px solid $shine-color;
+                  border-bottom: 3px solid $shine-color;
                   color: $shine-color;
                   text-shadow: 0 0 1px $shine-color;
                }
@@ -251,5 +252,11 @@
       100% {
          opacity: 100%;
       }
+   }
+}
+
+@keyframes fadeIn {
+   100% {
+      opacity: 1;
    }
 }

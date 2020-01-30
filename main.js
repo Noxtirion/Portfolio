@@ -11,6 +11,7 @@ const elements = {
    menuLink: document.querySelectorAll(".header__color"),
    menuNav: document.querySelector(".header__menu"),
    headContacts: document.querySelector(".header__contact"),
+   headWrapper: document.querySelector(".header__wrapper"),
    // menu buttons
    start: document.querySelector(".header__start"),
    aboutMeButton: document.querySelector(".header__about-me"),
@@ -30,6 +31,7 @@ const {
    menuLink,
    menuNav,
    headContacts,
+   headWrapper,
    start,
    aboutMeButton,
    technologiesButton,
@@ -92,9 +94,11 @@ function changeContent() {
          if (e.target !== start) {
             menuListUl.setAttribute("style", "background-color: #264d5b");
             headContacts.setAttribute("style", "background-color: #264d5b");
+            headWrapper.setAttribute("style", "background-color: #264d5b");
          } else {
             menuListUl.setAttribute("style", "background-color: #fff");
             headContacts.setAttribute("style", "background-color: #fff");
+            headWrapper.setAttribute("style", "background-color: #fff");
          }
 
          prevContent.forEach(item => {
