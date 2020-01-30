@@ -70,3 +70,15 @@ $breakpoints: (
    flex-wrap: $flex-wrap;
    @content;
 }
+
+@mixin hamburger-line(
+   $width: 100%,
+   $height: 1px,
+   $background-color: $shine-color,
+   $position: absolute
+) {
+   width: $width;
+   height: $height;
+   background-color: $background-color;
+   position: $position;
+}
