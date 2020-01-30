@@ -1,23 +1,62 @@
-function changeContent() {
+const elements = {
    // sections
-   const front = document.querySelector(".front");
-   const mainSection = document.querySelector(".main");
-   const aboutMe = document.querySelector(".main__about-me");
-   const technologies = document.querySelector(".main__technologies");
-   const projects = document.querySelector(".main__projects");
-
+   front: document.querySelector(".front"),
+   mainSection: document.querySelector(".main"),
+   aboutMe: document.querySelector(".main__about-me"),
+   technologies: document.querySelector(".main__technologies"),
+   projects: document.querySelector(".main__projects"),
    // menu list
-
-   const menuListUl = document.querySelector(".header__list");
-   const menuList = document.querySelectorAll(".header__menu-list");
-   const menuLink = document.querySelectorAll(".header__color");
-
+   menuListUl: document.querySelector(".header__list"),
+   menuList: document.querySelectorAll(".header__menu-list"),
+   menuLink: document.querySelectorAll(".header__color"),
+   menuNav: document.querySelector(".header__menu"),
+   headContacts: document.querySelector(".header__contact"),
    // menu buttons
+   start: document.querySelector(".header__start"),
+   aboutMeButton: document.querySelector(".header__about-me"),
+   technologiesButton: document.querySelector(".header__technologies"),
+   projectsButton: document.querySelector(".header__projects"),
+   hamburger: document.querySelector(".header__hamburger")
+};
 
-   const start = document.querySelector(".header__start");
-   const aboutMeButton = document.querySelector(".header__about-me");
-   const technologiesButton = document.querySelector(".header__technologies");
-   const projectsButton = document.querySelector(".header__projects");
+const {
+   front,
+   mainSection,
+   aboutMe,
+   technologies,
+   projects,
+   menuListUl,
+   menuList,
+   menuLink,
+   menuNav,
+   headContacts,
+   start,
+   aboutMeButton,
+   technologiesButton,
+   projectsButton,
+   hamburger
+} = elements;
+
+function changeContent() {
+   // // sections
+   // const front = document.querySelector(".front");
+   // const mainSection = document.querySelector(".main");
+   // const aboutMe = document.querySelector(".main__about-me");
+   // const technologies = document.querySelector(".main__technologies");
+   // const projects = document.querySelector(".main__projects");
+
+   // // menu list
+
+   // const menuListUl = document.querySelector(".header__list");
+   // const menuList = document.querySelectorAll(".header__menu-list");
+   // const menuLink = document.querySelectorAll(".header__color");
+
+   // // menu buttons
+
+   // const start = document.querySelector(".header__start");
+   // const aboutMeButton = document.querySelector(".header__about-me");
+   // const technologiesButton = document.querySelector(".header__technologies");
+   // const projectsButton = document.querySelector(".header__projects");
 
    const content = [front, aboutMe, technologies, projects];
    const contentButtons = [start, aboutMeButton, technologiesButton, projectsButton];
@@ -50,9 +89,13 @@ function changeContent() {
 
          prevContent = prevCheck(content);
 
-         e.target !== start
-            ? menuListUl.setAttribute("style", "background-color: #264d5b")
-            : menuListUl.setAttribute("style", "background-color: #fff");
+         if (e.target !== start) {
+            menuListUl.setAttribute("style", "background-color: #264d5b");
+            headContacts.setAttribute("style", "background-color: #264d5b");
+         } else {
+            menuListUl.setAttribute("style", "background-color: #fff");
+            headContacts.setAttribute("style", "background-color: #fff");
+         }
 
          prevContent.forEach(item => {
             item === front
@@ -61,13 +104,20 @@ function changeContent() {
          });
       });
    });
-
-   // menuLink.forEach(element => {
-
-   // })
 }
 
 changeContent();
+
+// navigation
+
+function navigation() {
+   hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("header__hamburger--active");
+      menuNav.classList.toggle("header__menu--active");
+   });
+}
+
+navigation();
 
 // function openText() {
 //    const techSection = document.querySelectorAll(".main__open");
