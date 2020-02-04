@@ -2,7 +2,7 @@
    &__wrapper {
       @include flex-container;
       opacity: 0;
-      animation: fadeIn 1.5s linear forwards;
+      animation: fadeIn 1s linear forwards;
       width: 100%;
       height: 4rem;
       position: fixed;
@@ -108,7 +108,7 @@
       transform: translateX(-100%);
       transition: transform 0.5s ease-out;
       opacity: 0;
-      animation: fadeIn 1.5s linear forwards;
+      animation: fadeIn 1s linear forwards;
 
       ul {
          @include flex-container($flex-direction: column, $align-items: flex-end);

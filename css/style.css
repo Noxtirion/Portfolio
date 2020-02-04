@@ -32,8 +32,8 @@ p {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   opacity: 0;
-  -webkit-animation: fadeIn 1.5s linear forwards;
-          animation: fadeIn 1.5s linear forwards;
+  -webkit-animation: fadeIn 1s linear forwards;
+          animation: fadeIn 1s linear forwards;
   width: 100%;
   height: 4rem;
   position: fixed;
@@ -195,8 +195,8 @@ p {
   transition: transform 0.5s ease-out;
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
   opacity: 0;
-  -webkit-animation: fadeIn 1.5s linear forwards;
-          animation: fadeIn 1.5s linear forwards;
+  -webkit-animation: fadeIn 1s linear forwards;
+          animation: fadeIn 1s linear forwards;
 }
 
 .header__menu ul {
