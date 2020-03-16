@@ -13,21 +13,30 @@
          href="https://fonts.googleapis.com/css?family=Headland+One&display=swap"
          rel="stylesheet"
       />
+      <!-- devicon -->
+      <link
+         rel="stylesheet"
+         href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+      />
    </head>
    <body>
-      <header class="header">
+      <header class="header" id="menu-anchor">
          <div class="header__wrapper">
             <div class="header__contact">
-               <div class="header__logo"><h1 class="header__name">DARIUSZ BARTYZEL</h1></div>
+               <div class="header__logo"><h2 class="header__name">DARIUSZ BARTYZEL</h2></div>
                <button class="header__hamburger">
                   <span class="header__hamburger-box"
                      ><span class="header__hamburger-inner"></span
                   ></span>
                </button>
                <span class="header__contact-list">
-                  <a href="" class="header__github">A</a>
-                  <a href="" class="headerked-in">B</a>
-                  <a href="" class="header__email">C</a>
+                  <a href="https://github.com/Noxtirion" class="header__github"
+                     ><img src="./img/github.svg" alt="github"
+                  /></a>
+                  <a href="" class="header__linked-in"
+                     ><img src="./img/linkedin.svg" alt="linkedin"
+                  /></a>
+                  <a href="" class="header__email"><img src="./img/mail.svg" alt="mail"/></a>
                </span>
             </div>
          </div>
@@ -69,10 +78,14 @@
             D
             <div class="front__title6">DEVELOPER</div>
          </div>
+         <div class="front__image">
+            <img class="front__rain" src="./img/Rain.png" alt="Rain" />
+            <img class="front__branch" src="./img/branch.png" alt="Branch" />
+         </div>
       </section>
       <main class="main">
          <section class="main__about-me">
-            <h2>O MNIE</h2>
+            <h2>O mnie</h2>
             <p>
                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem ex soluta
                reiciendis labore facere nisi animi atque incidunt expedita excepturi. Molestias
@@ -86,53 +99,67 @@
             </p>
          </section>
          <section class="main__technologies">
-            <h2>TECHNOLOGIE</h2>
-            <div class="main__html main__open">
-               <img class="main__techImg" src="./img/substitute.svg" alt="HTML" />
-               <p class="main__techText">
-                  HTML
-               </p>
+            <h2 class="main__title">Technologie</h2>
+            <div class="main__tech">
+               <div class="main__html main__open">
+                  <i class="devicon-html5-plain colored"></i>
+                  <p class="main__techText">
+                     HTML
+                  </p>
+               </div>
+               <div class="main__css main__open">
+                  <i class="devicon-css3-plain colored"></i>
+                  <p class="main__techText">
+                     CSS
+                  </p>
+               </div>
+               <div class="main__js main__open">
+                  <i class="devicon-javascript-plain colored"></i>
+                  <p class="main__techText">
+                     JS
+                  </p>
+               </div>
+               <div class="main__react main__open">
+                  <i class="devicon-react-original colored"></i>
+                  <p class="main__techText">
+                     REACT
+                  </p>
+               </div>
+               <div class="main__sass main__open">
+                  <i class="devicon-sass-original colored"></i>
+                  <p class="main__techText">
+                     SASS
+                  </p>
+               </div>
             </div>
-            <div class="main__css main__open">
-               <img class="main__techImg" src="./img/substitute.svg" alt="CSS" />
-               <p class="main__techText">
-                  CSS
-               </p>
-            </div>
-            <div class="main__js main__open">
-               <img class="main__techImg" src="./img/substitute.svg" alt="JS" />
-               <p class="main__techText">
-                  JS
-               </p>
-            </div>
-            <div class="main__react main__open">
-               <img class="main__techImg" src="./img/substitute.svg" alt="REACT" />
-               <p class="main__techText">
-                  REACT
-               </p>
-            </div>
-            <div class="main__sass main__open">
-               <img class="main__techImg" src="./img/substitute.svg" alt="SASS" />
-               <p class="main__techText">
-                  SASS
-               </p>
-            </div>
+            <h2 class="main__title main__title--tools">Narzędzia</h2>
             <!-- <div class="main__bem">BEM</div> -->
-            <div class="main__webpack main__open">
-               <img class="main__techImg" src="./img/substitute.svg" alt="WEBPACK" />
-               <p class="main__techText">
-                  BEM
-               </p>
+            <div class="main__tools">
+               <div class="main__webpack main__open">
+                  <i class="devicon-webpack-plain colored"></i>
+                  <p class="main__techText">
+                     WEBPACK
+                  </p>
+               </div>
+               <div class="main__git main__open">
+                  <i class="devicon-git-plain colored"></i>
+                  <p class="main__techText">
+                     GIT
+                  </p>
+               </div>
             </div>
-            <div class="main__git main__open">
-               <img class="main__techImg" src="./img/substitute.svg" alt="GIT" />
-               <p class="main__techText">
-                  GIT
-               </p>
+            <h2 class="main__title main__title--method">Metodologie</h2>
+            <div class="main__method">
+               <div class="main__bem main__open">
+                  <img class="main__techImg" src="./img/substitute.svg" alt="BEM" />
+                  <p class="main__techText">
+                     BEM
+                  </p>
+               </div>
             </div>
          </section>
          <section class="main__projects">
-            <h2>PROJEKTY</h2>
+            <h2>Projekty</h2>
             <section class="main__game">
                <figure class="main__wrapper">
                   <span><h3>Game Of Colors</h3></span>
@@ -209,6 +236,17 @@
                   </div>
                </figure>
             </section>
+            <section class="main__rss">
+               <figure class="main__wrapper">
+                  <span><h3>RSS App</h3></span>
+                  <img src="./img/rss.png" alt="" />
+
+                  <div class="main__links">
+                     <a href="#">Github</a>
+                     <a href="#">LIVE</a>
+                  </div>
+               </figure>
+            </section>
          </section>
       </main>
       <footer class="footer">
@@ -218,7 +256,11 @@
             <span><a href="mailto:">Mój_email@gmail.com</a></span>
          </section>
       </footer>
-
+      <div class="button-top">
+         <a class="button-top__link" href="#menu-anchor">
+            <img class="button-top__return" src="./img/arrowUp.svg" alt="Arrow" />
+         </a>
+      </div>
       <!-- Vendor -->
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -40,26 +40,6 @@ const {
 } = elements;
 
 function changeContent() {
-   // // sections
-   // const front = document.querySelector(".front");
-   // const mainSection = document.querySelector(".main");
-   // const aboutMe = document.querySelector(".main__about-me");
-   // const technologies = document.querySelector(".main__technologies");
-   // const projects = document.querySelector(".main__projects");
-
-   // // menu list
-
-   // const menuListUl = document.querySelector(".header__list");
-   // const menuList = document.querySelectorAll(".header__menu-list");
-   // const menuLink = document.querySelectorAll(".header__color");
-
-   // // menu buttons
-
-   // const start = document.querySelector(".header__start");
-   // const aboutMeButton = document.querySelector(".header__about-me");
-   // const technologiesButton = document.querySelector(".header__technologies");
-   // const projectsButton = document.querySelector(".header__projects");
-
    const content = [front, aboutMe, technologies, projects];
    const contentButtons = [start, aboutMeButton, technologiesButton, projectsButton];
    let prevContent;
@@ -92,9 +72,9 @@ function changeContent() {
          prevContent = prevCheck(content);
 
          if (e.target !== start) {
-            menuListUl.setAttribute("style", "background-color: #264d5b");
-            headContacts.setAttribute("style", "background-color: #264d5b");
-            headWrapper.setAttribute("style", "background-color: #264d5b");
+            menuListUl.setAttribute("style", "background-color: #4f5f76");
+            headContacts.setAttribute("style", "background-color: #4f5f76");
+            headWrapper.setAttribute("style", "background-color: #4f5f76");
          } else {
             menuListUl.setAttribute("style", "background-color: #fff");
             headContacts.setAttribute("style", "background-color: #fff");
@@ -143,26 +123,36 @@ navigation();
 
 // openText();
 
-//////// Smooth scroll
+//////////////////////////////////
 
-// $(".header__menu a").smoothScroll({
-//    offset: -50,
-//    afterScroll: function() {
-//       $(this)
-//          .closest(".header__menu")
-//          .find("a")
-//          .removeClass("active");
-//       $(this).addClass("active");
-//    }
-// });
+const anchor = document.getElementById("menu-anchor");
+const buttonUp = document.querySelector(".button-top");
 
-// $(".button-top a").smoothScroll({
-//    offset: 0,
-//    afterScroll: function() {
-//       $(this)
-//          .closest(".button-top")
-//          .find("a")
-//          .removeClass("active");
-//       $(this).addClass("active");
-//    }
-// });
+const buttonOptions = {
+   rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScrollButton = new IntersectionObserver(function(entries, appearOnScrollButton) {
+   entries.forEach(entry => {
+      if (entry.isIntersecting) {
+         buttonUp.classList.remove("appear");
+      } else {
+         buttonUp.classList.add("appear");
+      }
+   });
+}, buttonOptions);
+
+appearOnScrollButton.observe(anchor);
+
+////// Smooth scroll
+
+$(".button-top a").smoothScroll({
+   offset: 0,
+   afterScroll: function() {
+      $(this)
+         .closest(".button-top")
+         .find("a")
+         .removeClass("active");
+      $(this).addClass("active");
+   }
+});
