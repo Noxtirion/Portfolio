@@ -219,6 +219,24 @@
             width: 25rem;
          }
       }
+
+      .main__fade-left {
+         // transform: translateX(-10%);
+         transform: translateX(-10%);
+      }
+
+      .main__fade-right {
+         opacity: 0;
+      }
+
+      .main__fade-left,
+      .main__fade-right {
+         transition: transform 400ms ease-in, opacity 400ms ease-in;
+         &.fade-in {
+            transform: translateX(0);
+            opacity: 100%;
+         }
+      }
    }
 }
 

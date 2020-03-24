@@ -100,7 +100,7 @@ function navigation() {
 
 navigation();
 
-//Intersection observer used to animate return button
+// Intersection observer used to animate return button
 
 const anchor = document.getElementById("menu-anchor");
 const buttonUp = document.querySelector(".button-top");
@@ -121,7 +121,7 @@ const appearOnScrollButton = new IntersectionObserver(function(entries, appearOn
 
 appearOnScrollButton.observe(anchor);
 
-////// Smooth scroll
+// Smooth scroll
 
 $(".button-top a").smoothScroll({
    offset: 0,
@@ -132,4 +132,27 @@ $(".button-top a").smoothScroll({
          .removeClass("active");
       $(this).addClass("active");
    }
+});
+
+// Intersection observer used to animate appearing of projects and description
+
+const sliders = document.querySelectorAll(".main__slade-in");
+
+const projectsOptions = {
+   rootMargin: "0px 0px -100px 0px"
+};
+
+const appearOnScrollProjects = new IntersectionObserver(function(entries, appearOnScrollProjects) {
+   entries.forEach(entry => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+         entry.target.classList.add("fade-in");
+      } else {
+         entry.target.classList.remove("fade-in");
+      }
+   });
+}, projectsOptions);
+
+sliders.forEach(slider => {
+   appearOnScrollProjects.observe(slider);
 });

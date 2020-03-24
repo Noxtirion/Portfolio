@@ -839,6 +839,30 @@ p {
   }
 }
 
+.main__projects .main__fade-left {
+  -webkit-transform: translateX(-10%);
+          transform: translateX(-10%);
+}
+
+.main__projects .main__fade-right {
+  opacity: 0;
+}
+
+.main__projects .main__fade-left,
+.main__projects .main__fade-right {
+  -webkit-transition: opacity 400ms ease-in, -webkit-transform 400ms ease-in;
+  transition: opacity 400ms ease-in, -webkit-transform 400ms ease-in;
+  transition: transform 400ms ease-in, opacity 400ms ease-in;
+  transition: transform 400ms ease-in, opacity 400ms ease-in, -webkit-transform 400ms ease-in;
+}
+
+.main__projects .main__fade-left.fade-in,
+.main__projects .main__fade-right.fade-in {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 100%;
+}
+
 .visible {
   height: auto;
   min-height: 100vh;
