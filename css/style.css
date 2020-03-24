@@ -80,7 +80,7 @@ p {
   cursor: pointer;
   background-color: transparent;
   border: 0;
-  margin: 0;
+  margin-left: 6px;
 }
 
 @media (min-width: 700px) {
@@ -95,7 +95,14 @@ p {
 }
 
 .header__wrapper .header__contact .header__logo .header__name {
-  font-size: 16px;
+  font-size: 18px;
+  margin: 5px;
+  margin-left: 1rem;
+}
+
+.header__wrapper .header__contact .header__logo .header__name::first-letter {
+  font-size: 25px;
+  color: #f7892f;
 }
 
 @media (min-width: 700px) {
@@ -183,6 +190,7 @@ p {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 9rem;
+  margin-right: 1rem;
 }
 
 .header__wrapper .header__contact .header__contact-list a {
@@ -612,6 +620,33 @@ p {
           flex-direction: column;
 }
 
+.main__technologies h2 {
+  margin-bottom: 2rem;
+}
+
+.main__technologies .main__technology-subtitle {
+  margin: 1rem;
+  padding: 0.7rem;
+  max-width: 1100px;
+  margin-bottom: 2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  line-height: 1.5;
+  letter-spacing: 1.4px;
+  border: 1px solid #f7892f;
+}
+
+.main__technologies .main__technology-description {
+  margin: 1rem;
+  padding: 0.7rem;
+  margin-top: 2rem;
+  max-width: 1100px;
+  border: 1px solid #f7892f;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
 .main__technologies .main__title--tools,
 .main__technologies .main__title--method {
   margin: 5rem 0 3rem;
@@ -706,6 +741,7 @@ p {
   position: relative;
   overflow: hidden;
   border: 1px solid #f7892f;
+  border-radius: 5px;
 }
 
 @media (min-width: 800px) {
@@ -786,6 +822,23 @@ p {
   }
 }
 
+.main__projects .main__description {
+  width: 15rem;
+  margin: 1rem;
+}
+
+@media (min-width: 640px) {
+  .main__projects .main__description {
+    width: 20rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .main__projects .main__description {
+    width: 25rem;
+  }
+}
+
 .visible {
   height: auto;
   min-height: 100vh;
@@ -817,19 +870,6 @@ p {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-}
-
-.footer {
-  position: relative;
-  top: 100vh;
-  z-index: 30;
-  display: -ms-grid;
-  display: grid;
-  display: none;
-}
-
-.footer h2 {
-  text-align: center;
 }
 
 .button-top {

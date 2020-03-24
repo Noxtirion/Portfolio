@@ -52,6 +52,31 @@
       display: flex;
       flex-direction: column;
 
+      h2 {
+         margin-bottom: 2rem;
+      }
+
+      .main__technology-subtitle {
+         margin: 1rem;
+         padding: 0.7rem;
+         max-width: 1100px;
+         margin-bottom: 2rem;
+         align-self: center;
+         line-height: 1.5;
+         letter-spacing: 1.4px;
+         border: 1px solid $shine-color;
+      }
+
+      .main__technology-description {
+         margin: 1rem;
+         padding: 0.7rem;
+         margin-top: 2rem;
+         max-width: 1100px;
+         border: 1px solid $shine-color;
+         line-height: 1.5;
+         font-size: 1rem;
+      }
+
       .main__title--tools,
       .main__title--method {
          margin: 5rem 0 3rem;
@@ -64,24 +89,6 @@
          justify-content: center;
          flex-wrap: wrap;
       }
-      // max-width: 1000px;
-      // grid-auto-flow: row;
-      // grid-template-rows: 1fr;
-
-      // @include media-query(xxsmall) {
-      //    grid-template-columns: 1fr 1fr;
-      //    grid-template-rows: 300px;
-
-      //    h2 {
-      //       grid-column: 1 / span 2;
-      //    }
-      // }
-      // @include media-query(medium) {
-      //    grid-template-columns: 1fr 1fr 1fr 1fr;
-      //    h2 {
-      //       grid-column: 1 / span 4;
-      //    }
-      // }
 
       .main__open {
          display: flex;
@@ -111,7 +118,6 @@
 
    &__projects {
       max-width: 1000px;
-      // background-color: $secondary-color;
       grid-auto-flow: row;
       grid-template-rows: 1fr;
 
@@ -135,6 +141,7 @@
             position: relative;
             overflow: hidden;
             border: 1px solid $shine-color;
+            border-radius: 5px;
 
             @include media-query(medium) {
                width: 20rem;
@@ -200,6 +207,16 @@
                position: relative;
                bottom: 0.5rem;
             }
+         }
+      }
+      .main__description {
+         width: 15rem;
+         margin: 1rem;
+         @include media-query(small) {
+            width: 20rem;
+         }
+         @include media-query(medium) {
+            width: 25rem;
          }
       }
    }

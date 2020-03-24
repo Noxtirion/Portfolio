@@ -26,7 +26,7 @@
             cursor: pointer;
             background-color: transparent;
             border: 0;
-            margin: 0;
+            margin-left: 6px;
             @include media-query(smaller) {
                display: none;
             }
@@ -35,7 +35,13 @@
          .header__logo {
             display: none;
             .header__name {
-               font-size: 16px;
+               font-size: 18px;
+               margin: 5px;
+               margin-left: 1rem;
+               &::first-letter {
+                  font-size: 25px;
+                  color: $shine-color;
+               }
             }
             font-size: 15;
             @include media-query(smaller) {
@@ -94,6 +100,7 @@
          .header__contact-list {
             @include flex-container($justify-content: space-around);
             width: 9rem;
+            margin-right: 1rem;
             a {
                display: flex;
                &:hover {

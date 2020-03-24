@@ -42,6 +42,7 @@ const {
 function changeContent() {
    const content = [front, aboutMe, technologies, projects];
    const contentButtons = [start, aboutMeButton, technologiesButton, projectsButton];
+   let color;
    let prevContent;
    let prevContentButtons;
 
@@ -71,15 +72,11 @@ function changeContent() {
 
          prevContent = prevCheck(content);
 
-         if (e.target !== start) {
-            menuListUl.setAttribute("style", "background-color: #4f5f76");
-            headContacts.setAttribute("style", "background-color: #4f5f76");
-            headWrapper.setAttribute("style", "background-color: #4f5f76");
-         } else {
-            menuListUl.setAttribute("style", "background-color: #fff");
-            headContacts.setAttribute("style", "background-color: #fff");
-            headWrapper.setAttribute("style", "background-color: #fff");
-         }
+         e.target === start ? (color = "#fff") : (color = "#4f5f76");
+
+         [menuListUl, headContacts, headWrapper].forEach(element => {
+            element.setAttribute("style", `background-color: ${color}`);
+         });
 
          prevContent.forEach(item => {
             item === front
@@ -103,27 +100,7 @@ function navigation() {
 
 navigation();
 
-// function openText() {
-//    const techSection = document.querySelectorAll(".main__open");
-//    const techImage = document.querySelectorAll(".main__techImg");
-//    const techText = document.querySelectorAll(".main__techText");
-
-//    techImage.forEach(item => {
-//       item.addEventListener("click", e => {
-//          // techText.forEach(txt => {
-//          //    txt.classList.remove("main__techText--visible");
-//          // });
-
-//          item.nextElementSibling.classList.toggle("main__techText--visible");
-
-//          // console.log(e.target);
-//       });
-//    });
-// }
-
-// openText();
-
-//////////////////////////////////
+//Intersection observer used to animate return button
 
 const anchor = document.getElementById("menu-anchor");
 const buttonUp = document.querySelector(".button-top");
