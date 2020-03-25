@@ -5,7 +5,6 @@
    justify-content: center;
    align-items: center;
    flex-direction: column;
-
    overflow: hidden;
    color: #fff;
    background-color: $secondary-color;
@@ -29,10 +28,9 @@
 
    &__about-me {
       width: 100%;
-
       grid-auto-flow: column;
       grid-template-columns: 1fr minmax(auto, 300px) minmax(auto, 300px) minmax(auto, 300px) 1fr;
-      grid-template-rows: 300px auto 6rem;
+      grid-template-rows: 320px 1fr 6rem;
 
       h2 {
          grid-row: 1;
@@ -45,6 +43,35 @@
          @include media-query(large) {
             grid-column: 2 / span 3;
          }
+      }
+      .main__polygon {
+         position: relative;
+         grid-row: 3;
+         grid-column: 2 / span 3;
+         clip-path: polygon(50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+         top: -19rem;
+         right: 14rem;
+         height: 10rem;
+         width: 10rem;
+         background-color: #fff;
+         opacity: 60%;
+         z-index: -1;
+      }
+      .main__polygon--smaller {
+         opacity: 30%;
+         height: 7rem;
+         width: 7rem;
+         top: -24rem;
+         right: 24rem;
+         background-color: $shine-color;
+      }
+      .main__polygon--bigger {
+         opacity: 90%;
+         height: 13rem;
+         width: 13rem;
+         top: -8rem;
+         right: 24rem;
+         background-color: $shine-color;
       }
    }
 
@@ -221,7 +248,6 @@
       }
 
       .main__fade-left {
-         // transform: translateX(-10%);
          transform: translateX(-10%);
       }
 

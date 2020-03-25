@@ -9,8 +9,9 @@
       top: 0;
       left: 0;
       border-bottom: 2px solid $shine-color;
-      z-index: 2;
+      z-index: 25;
       background-color: #fff;
+      transition: transform 0.5s ease-out;
       @include media-query(smaller) {
          height: 3rem;
       }
@@ -38,9 +39,17 @@
                font-size: 18px;
                margin: 5px;
                margin-left: 1rem;
+               padding: 0 0.5rem;
+               transition: transform 0.5s ease;
                &::first-letter {
                   font-size: 25px;
                   color: $shine-color;
+               }
+            }
+            @include media-query(smaller) {
+               .header__name--down {
+                  transform: translateY(1.4rem);
+                  // border-right: 2px solid $shine-color;
                }
             }
             font-size: 15;
@@ -99,8 +108,15 @@
 
          .header__contact-list {
             @include flex-container($justify-content: space-around);
+            background-color: #fff;
             width: 9rem;
             margin-right: 1rem;
+            transition: transform 0.5s ease;
+            @include media-query(smaller) {
+               transform: translateY(1.4rem);
+               border-left: 2px solid $shine-color;
+               border-right: 2px solid $shine-color;
+            }
             a {
                display: flex;
                &:hover {
@@ -122,7 +138,7 @@
       left: 0;
       width: 100%;
       background-color: #fff;
-      transform: translateX(-100%);
+      transform: translate(-100%, 0);
       transition: transform 0.5s ease-out;
       opacity: 0;
       animation: fadeIn 1s linear forwards;
@@ -161,13 +177,14 @@
          }
       }
    }
+
    &__menu--active {
       transform: translateX(0);
    }
 
    @include media-query(smaller) {
       &__menu {
-         transform: translateX(0);
+         transform: translate(0, 0);
          top: 3rem;
 
          ul {
@@ -183,7 +200,7 @@
                   text-decoration: none;
                   color: #000;
                   padding: 0.5rem;
-                  border-radius: 0.5rem;
+                  border-radius: 0.2rem;
                   transition: border-bottom 0.2s;
                }
                a:hover {
@@ -200,6 +217,9 @@
                }
             }
          }
+      }
+      &__show {
+         transform: translate(0, -1.5rem);
       }
    }
 }
@@ -225,27 +245,28 @@
       z-index: -1;
    }
 
-   &__rain {
+   &__hexagon {
       opacity: 0.1;
-      animation: color 10s linear infinite;
+      animation: color 5s linear infinite;
       height: 30rem;
       @include media-query(xlarge) {
          position: absolute;
-         bottom: -4rem;
-         right: -4rem;
+         transform: rotate(30deg);
+         bottom: -10rem;
+         right: -5rem;
          opacity: 0.4;
       }
    }
 
-   &__branch {
+   &__hexagon--top {
       opacity: 0;
       position: absolute;
-      animation: color 20s linear infinite;
+      animation: color 5s linear infinite;
       height: 30rem;
       @include media-query(xlarge) {
-         top: 0rem;
-         left: -2rem;
-         opacity: 0.6;
+         top: 7rem;
+         left: -10rem;
+         opacity: 0.4;
       }
    }
 

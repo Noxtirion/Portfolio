@@ -12,6 +12,8 @@ const elements = {
    menuNav: document.querySelector(".header__menu"),
    headContacts: document.querySelector(".header__contact"),
    headWrapper: document.querySelector(".header__wrapper"),
+   headContactList: document.querySelector(".header__contact-list"),
+   headName: document.querySelector(".header__name"),
    // menu buttons
    start: document.querySelector(".header__start"),
    aboutMeButton: document.querySelector(".header__about-me"),
@@ -32,6 +34,8 @@ const {
    menuNav,
    headContacts,
    headWrapper,
+   headContactList,
+   headName,
    start,
    aboutMeButton,
    technologiesButton,
@@ -74,7 +78,7 @@ function changeContent() {
 
          e.target === start ? (color = "#fff") : (color = "#4f5f76");
 
-         [menuListUl, headContacts, headWrapper].forEach(element => {
+         [menuListUl, headContacts, headWrapper, headContactList, headName].forEach(element => {
             element.setAttribute("style", `background-color: ${color}`);
          });
 
@@ -144,7 +148,6 @@ const projectsOptions = {
 
 const appearOnScrollProjects = new IntersectionObserver(function(entries, appearOnScrollProjects) {
    entries.forEach(entry => {
-      console.log(entry);
       if (entry.isIntersecting) {
          entry.target.classList.add("fade-in");
       } else {
@@ -156,3 +159,29 @@ const appearOnScrollProjects = new IntersectionObserver(function(entries, appear
 sliders.forEach(slider => {
    appearOnScrollProjects.observe(slider);
 });
+
+// Intersection observer used to animate showing and hiding contact bar
+
+const spot = document.querySelector(".header__spot");
+const name = document.querySelector(".header__name");
+
+const contactOptions = {
+   rootMargin: "0px"
+};
+
+const contactObserver = new IntersectionObserver(entries => {
+   entries.forEach(entry => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+         menuNav.classList.remove("header__show");
+         headWrapper.classList.remove("header__show");
+         name.classList.remove("header__name--down");
+      } else {
+         menuNav.classList.add("header__show");
+         headWrapper.classList.add("header__show");
+         name.classList.add("header__name--down");
+      }
+   });
+}, contactOptions);
+
+contactObserver.observe(anchor);
