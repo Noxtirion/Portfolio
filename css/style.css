@@ -236,7 +236,6 @@ p {
 
 .header__wrapper .header__contact .header__contact-list a img {
   height: 2rem;
-  opacity: 0.7;
 }
 
 .header__menu {
@@ -342,8 +341,6 @@ p {
     margin: 0.5rem;
   }
   .header__menu ul li a {
-    text-decoration: none;
-    color: #000;
     padding: 0.5rem;
     border-radius: 0.2rem;
     -webkit-transition: border-bottom 0.2s;
@@ -376,13 +373,13 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  opacity: 1;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: 1;
 }
 
 .front__image {
@@ -576,8 +573,6 @@ p {
 }
 
 .main {
-  width: 100%;
-  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -587,6 +582,8 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  min-height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -636,6 +633,7 @@ p {
   -ms-grid-column-span: 3;
   grid-column: 2 / span 3;
   margin: 0 0.5rem;
+  letter-spacing: 1.4px;
 }
 
 @media (min-width: 1024px) {
@@ -715,7 +713,7 @@ p {
   margin-top: 2rem;
   max-width: 1100px;
   border: 1px solid #f7892f;
-  line-height: 1.5;
+  letter-spacing: 1.4px;
   font-size: 1rem;
 }
 
@@ -756,7 +754,6 @@ p {
 .main__technologies .main__open img {
   width: 4rem;
   height: 4rem;
-  background-color: dodgerblue;
   margin: 1rem;
 }
 
@@ -899,6 +896,10 @@ p {
   margin: 1rem;
 }
 
+.main__projects .main__description p {
+  letter-spacing: 1.4px;
+}
+
 @media (min-width: 640px) {
   .main__projects .main__description {
     width: 20rem;
@@ -997,6 +998,6 @@ p {
 
 .button-top.appear {
   pointer-events: visible;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 /*# sourceMappingURL=style.css.map */

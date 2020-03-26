@@ -70,6 +70,13 @@ $breakpoints: (
    @content;
 }
 
+@mixin flex($display: flex, $justify-content: center, $align-items: center) {
+   display: $display;
+   justify-content: $justify-content;
+   align-items: $align-items;
+   @content;
+}
+
 @mixin hamburger-line(
    $width: 100%,
    $height: 1px,
@@ -80,4 +87,10 @@ $breakpoints: (
    height: $height;
    background-color: $background-color;
    position: $position;
+}
+
+@mixin text-on-hover() {
+   color: $shine-color;
+   text-shadow: 0 0 1px $shine-color;
+   @content;
 }
