@@ -171,7 +171,6 @@ const contactOptions = {
 
 const contactObserver = new IntersectionObserver(entries => {
    entries.forEach(entry => {
-      console.log(entry);
       if (entry.isIntersecting) {
          menuNav.classList.remove("header__show");
          headWrapper.classList.remove("header__show");
