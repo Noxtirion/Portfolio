@@ -506,7 +506,7 @@ p {
   100% {
     -webkit-transform: rotate(1080deg);
             transform: rotate(1080deg);
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
@@ -514,19 +514,19 @@ p {
   100% {
     -webkit-transform: rotate(1080deg);
             transform: rotate(1080deg);
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes titleDev {
   100% {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
 @keyframes titleDev {
   100% {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
@@ -651,33 +651,30 @@ p {
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-column: 2 / span 3;
-  -webkit-clip-path: polygon(50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-          clip-path: polygon(50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-  top: -19rem;
+  top: -18rem;
   right: 14rem;
-  height: 10rem;
-  width: 10rem;
-  background-color: #fff;
-  opacity: 60%;
+  height: 11rem;
+  width: 11rem;
+  opacity: 0.6;
   z-index: -1;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
 }
 
 .main__about-me .main__polygon--smaller {
-  opacity: 30%;
-  height: 7rem;
-  width: 7rem;
+  opacity: 0.3;
+  height: 9rem;
+  width: 9rem;
   top: -24rem;
   right: 24rem;
-  background-color: #f7892f;
 }
 
 .main__about-me .main__polygon--bigger {
-  opacity: 90%;
-  height: 13rem;
-  width: 13rem;
+  opacity: 0.9;
+  height: 14rem;
+  width: 14rem;
   top: -8rem;
   right: 24rem;
-  background-color: #f7892f;
 }
 
 .main__technologies {
@@ -933,7 +930,7 @@ p {
 .main__projects .main__fade-right.fade-in {
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  opacity: 100%;
+  opacity: 1;
 }
 
 .visible {

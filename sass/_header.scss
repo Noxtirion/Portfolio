@@ -311,13 +311,13 @@
    @keyframes titleFront {
       100% {
          transform: rotate(1080deg);
-         opacity: 100%;
+         opacity: 1;
       }
    }
 
    @keyframes titleDev {
       100% {
-         opacity: 100%;
+         opacity: 1;
       }
    }
 }
