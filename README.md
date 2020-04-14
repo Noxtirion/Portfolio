@@ -15,3 +15,7 @@ Portfolio site where I put description about me and my projects.
 ## Methodology
 
 -  BEM
+
+## Live
+
+[Live](https://noxtirion.github.io/Portfolio/)
