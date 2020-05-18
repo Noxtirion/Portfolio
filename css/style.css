@@ -223,19 +223,21 @@ p {
   }
 }
 
-.header__wrapper .header__contact .header__contact-list a {
+.header__wrapper .header__contact .header__contact-list a,
+.header__wrapper .header__contact .header__contact-list .header__linked-in {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+.header__wrapper .header__contact .header__contact-list a img,
+.header__wrapper .header__contact .header__contact-list .header__linked-in img {
+  height: 2rem;
+}
+
 .header__wrapper .header__contact .header__contact-list a:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-}
-
-.header__wrapper .header__contact .header__contact-list a img {
-  height: 2rem;
 }
 
 .header__menu {
@@ -702,6 +704,7 @@ p {
   line-height: 1.5;
   letter-spacing: 1.4px;
   border: 1px solid #f7892f;
+  border-radius: 10px;
 }
 
 .main__technologies .main__technology-description {
@@ -710,6 +713,7 @@ p {
   margin-top: 2rem;
   max-width: 1100px;
   border: 1px solid #f7892f;
+  border-radius: 10px;
   letter-spacing: 1.4px;
   font-size: 1rem;
 }

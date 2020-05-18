@@ -118,15 +118,17 @@
                border-right: 2px solid $shine-color;
             }
 
-            a {
+            a,
+            .header__linked-in {
                display: flex;
-
-               &:hover {
-                  transform: scale(1.1);
-               }
 
                img {
                   height: 2rem;
+               }
+            }
+            a {
+               &:hover {
+                  transform: scale(1.1);
                }
             }
          }
