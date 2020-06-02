@@ -295,12 +295,6 @@ p {
   transition: border-right 0.2s;
 }
 
-.header__menu ul li a:hover {
-  border-right: 3px solid #f7892f;
-  color: #f7892f;
-  text-shadow: 0 0 1px #f7892f;
-}
-
 .header__menu ul li .active {
   border-right: 3px solid #f7892f;
   color: #f7892f;
@@ -347,12 +341,6 @@ p {
     border-radius: 0.2rem;
     -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
-  }
-  .header__menu ul li a:hover {
-    border-right: 0;
-    border-bottom: 3px solid #f7892f;
-    color: #f7892f;
-    text-shadow: 0 0 1px #f7892f;
   }
   .header__menu ul li .active {
     border-right: 0;

@@ -1,3 +1,5 @@
+window.location.hash.length === 0 && (window.location.hash = "#start");
+
 const elements = {
    // sections
    front: document.querySelector(".front"),
@@ -43,66 +45,68 @@ const {
    hamburger
 } = elements;
 
-function changeContent() {
+(function changeContent() {
    const content = [front, aboutMe, technologies, projects];
    const contentButtons = [start, aboutMeButton, technologiesButton, projectsButton];
    let color;
    let prevContent;
    let prevContentButtons;
 
-   menuList.forEach(element => {
-      element.addEventListener("click", function(e) {
-         const index = contentButtons.findIndex(item => {
-            return e.target === item;
-         });
-
-         const prevCheck = x => {
-            return x.filter(item => {
-               return item !== x[index];
-            });
-         };
-
-         contentButtons[index].classList.add("active");
-
-         prevContentButtons = prevCheck(contentButtons);
-
-         prevContentButtons.forEach(item => {
-            item.classList.remove("active");
-         });
-
-         e.target !== start
-            ? content[index].classList.add("visible")
-            : content[index].setAttribute("style", "display: flex");
-
-         prevContent = prevCheck(content);
-
-         e.target === start ? (color = "#fff") : (color = "#4f5f76");
-
-         [menuListUl, headContacts, headWrapper, headContactList, headName].forEach(element => {
-            element.setAttribute("style", `background-color: ${color}`);
-         });
-
-         prevContent.forEach(item => {
-            item === front
-               ? item.setAttribute("style", "display: none")
-               : item.classList.remove("visible");
-         });
+   function onChange() {
+      const index = contentButtons.findIndex(item => {
+         return window.location.hash === item.hash;
       });
-   });
-}
 
-changeContent();
+      const prevCheck = x => {
+         return x.filter(item => {
+            return item !== x[index];
+         });
+      };
+
+      contentButtons[index].classList.add("active");
+
+      contentButtons.forEach(item =>
+         item.addEventListener("touchcancel", () => e.target.classList.remove("active"))
+      );
+
+      prevContentButtons = prevCheck(contentButtons);
+
+      prevContentButtons.forEach(item => {
+         item.classList.remove("active");
+      });
+
+      window.location.hash !== start.hash
+         ? content[index].classList.add("visible")
+         : content[index].setAttribute("style", "display: flex");
+
+      prevContent = prevCheck(content);
+
+      window.location.hash === start.hash ? (color = "#fff") : (color = "#4f5f76");
+
+      [menuListUl, headContacts, headWrapper, headContactList, headName].forEach(element => {
+         element.setAttribute("style", `background-color: ${color}`);
+      });
+
+      prevContent.forEach(item => {
+         item === front
+            ? item.setAttribute("style", "display: none")
+            : item.classList.remove("visible");
+      });
+   }
+
+   onChange();
+
+   window.addEventListener("hashchange", onChange);
+})();
 
 // navigation
 
-function navigation() {
+(function navigation() {
    hamburger.addEventListener("click", () => {
       hamburger.classList.toggle("header__hamburger--active");
       menuNav.classList.toggle("header__menu--active");
    });
-}
-
-navigation();
+})();
 
 // Intersection observer used to animate return button
 
