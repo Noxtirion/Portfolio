@@ -75,9 +75,10 @@ const {
          item.classList.remove("active");
       });
 
-      window.location.hash !== start.hash
-         ? content[index].classList.add("visible")
-         : content[index].setAttribute("style", "display: flex");
+      content[index] &&
+         (window.location.hash !== start.hash
+            ? content[index].classList.add("visible")
+            : content[index].setAttribute("style", "display: flex"));
 
       prevContent = prevCheck(content);
 
