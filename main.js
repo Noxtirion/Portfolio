@@ -63,7 +63,7 @@ const {
          });
       };
 
-      contentButtons[index].classList.add("active");
+      contentButtons[index] && contentButtons[index].classList.add("active");
 
       contentButtons.forEach(item =>
          item.addEventListener("touchcancel", () => e.target.classList.remove("active"))
