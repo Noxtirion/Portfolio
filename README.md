@@ -18,4 +18,4 @@ Portfolio site where I put description about me and my projects.
 
 ## Live
 
-[Live](https://noxtirion.github.io/Portfolio/)
+[Live](https://noxtirion.github.io/Portfolio/#start)
