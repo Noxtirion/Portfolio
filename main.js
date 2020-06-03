@@ -65,10 +65,6 @@ const {
 
       contentButtons[index] && contentButtons[index].classList.add("active");
 
-      contentButtons.forEach(item =>
-         item.addEventListener("touchcancel", () => e.target.classList.remove("active"))
-      );
-
       prevContentButtons = prevCheck(contentButtons);
 
       prevContentButtons.forEach(item => {
